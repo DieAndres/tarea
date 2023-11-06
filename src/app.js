@@ -157,25 +157,32 @@ app.post("/api/agregarPersona", async (req, res) => {
   // Operación 4: Obtener Domicilios por Criterio
   app.get("/api/obtenerDomiciliosPorCriterio", async (req, res) => {
     try {
-      const { barrio, localidad, departamento } = req.query;
-  
-      // Construye el criterio de búsqueda
+      const { Barrio, Localidad, Departamento } = req.query;
+ 
+      // Construye el criterio de búsqueda como un objeto con todas las condiciones
       const criterioBusqueda = {};
-      if (barrio) criterioBusqueda.Barrio = barrio;
-      if (localidad) criterioBusqueda.Localidad = localidad;
-      if (departamento) criterioBusqueda.Departamento = departamento;
-  
-      // Obtiene todos los domicilios que cumplen con el criterio
-      const domicilios = await Domicilio.find(criterioBusqueda)
-        .populate("Datos_Persona")
-        .populate("Direccion");
-  
-      res.json({ domicilios });
+      if (Barrio) criterioBusqueda.Barrio = Barrio;
+      if (Localidad) criterioBusqueda.Localidad = Localidad;
+      if (Departamento) criterioBusqueda.Departamento = Departamento;      
+      const domicilios = await Domicilio.find()
+      .populate("Datos_Persona")
+      .populate({
+        path: "Direccion",
+        match: criterioBusqueda 
+      })
+      .exec();
+    const domiciliosFiltrados = domicilios.filter((domicilio) => {
+      return domicilio.Direccion !== null; 
+    });
+
+
+    res.json({ domicilios: domiciliosFiltrados });      
     } catch (error) {
       console.error(error);
       res.status(500).json({ mensaje: "Error interno del servidor" });
     }
   });
+
   
   app.listen(port, () => {
     console.log(`Servidor escuchando en http://localhost:${port}`);
