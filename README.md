@@ -8,7 +8,7 @@ Agregar Persona:
 	Método HTTP: POST.
 	URL: /api/agregarPersona
  
-	Descripción: Este servicio permite agregar una nueva persona a la base de datos. Debes 	enviar los datos de la persona en el cuerpo de la solicitud. Verifica si la persona ya existe en 	la base de datos antes de agregarla.
+	Descripción: Este servicio permite agregar una nueva persona a la base de datos. Se debe enviar los datos de la persona en el cuerpo de la solicitud. Verifica si la persona ya existe en la base de datos antes de agregarla.
 	Respuesta exitosa: Devuelve un mensaje indicando que la persona se agregó con éxito.
 	Respuesta de error: Devuelve un mensaje de error si la persona ya existe o si ocurre un error interno del servidor.
 
@@ -24,16 +24,16 @@ Consultar Domicilio:
 	Método HTTP: GET.
 	URL: /api/consultarDomicilio/:CI
  
-	Descripción: Este servicio permite consultar los domicilios asociados a una persona 	específica. Debes proporcionar la cédula de identidad (CI) de la persona en la URL.
-	Respuesta exitosa: Devuelve una lista de los domicilios asociados a la persona, incluyendo 	los detalles completos de la dirección.
-	Respuesta de error: Devuelve un mensaje de error si la persona no existe o si ocurre un error 	interno del servidor.
+	Descripción: Este servicio permite consultar los domicilios asociados a una persona específica. Se debe proporcionar la cédula de identidad (CI) de la persona en la URL.
+	Respuesta exitosa: Devuelve una lista de los domicilios asociados a la persona, incluyendo los detalles completos de la dirección.
+	Respuesta de error: Devuelve un mensaje de error si la persona no existe o si ocurre un error interno del servidor.
 
 Obtener Domicilios por Criterio:
 	Método HTTP: GET.
 	URL: /api/obtenerDomiciliosPorCriterio
  
-	Descripción: Este servicio permite buscar domicilios que cumplan con ciertos criterios de búsqueda, como barrio, localidad y departamento. Los criterios de búsqueda se pasan como 	parámetros de consulta en la URL.
-	Respuesta exitosa: Devuelve una lista de domicilios que cumplen con los criterios especificados, incluyendo los detalles completos de la dirección y la información de la 	persona asociada.
+	Descripción: Este servicio permite buscar domicilios que cumplan con ciertos criterios de búsqueda, como barrio, localidad y departamento. Los criterios de búsqueda se pasan como parámetros de consulta en la URL.
+	Respuesta exitosa: Devuelve una lista de domicilios que cumplen con los criterios especificados, incluyendo los detalles completos de la dirección y la información de la persona asociada.
 	Respuesta de error: Devuelve un mensaje de error si ocurre un error interno del servidor.
 
 3) Instalación: Hay que tener instalado Git y NodeJs
@@ -48,7 +48,7 @@ Obtener Domicilios por Criterio:
 5) Plataformas, lenguajes y base de datos:                                                                                                                                                 
 	Se usa Mongodb Atlas como base de datos en la nube. 
 	Se usó JavaScript con Node.js para desarrollar la aplicación, pero no es necesario tener instalado Node.js si se usa docker  en el sistema porque está en la imagen que se descarga al hacer docker build.
-	Se puede usar en cualquier plataforma en la que se pueda instalar NodeJs (Windows, Linux, Mac).
+	Se puede usar en cualquier plataforma en la que se pueda instalar NodeJs o docker, según el caso (Windows, Linux, Mac).
                    
 6) Base de datos elegida y diseño de esquema.
  
