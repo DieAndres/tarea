@@ -3,17 +3,18 @@ Tarea: API Rest
 1) Formato de intercambio de datos: JSON
 
 2) URLs de la API. :
+
 Agregar Persona:
 	Método HTTP: POST
 	URL: /api/agregarPersona
 	Descripción: Este servicio permite agregar una nueva persona a la base de datos. Debes 	enviar los datos de la persona en el cuerpo de la solicitud. Verifica si la persona ya existe en 	la base de datos antes de agregarla.
 	Respuesta exitosa: Devuelve un mensaje indicando que la persona se agregó con éxito.
-	Respuesta de error: Devuelve un mensaje de error si la persona ya existe o si ocurre un error 	interno del servidor.
+	Respuesta de error: Devuelve un mensaje de error si la persona ya existe o si ocurre un error interno del servidor.
 
 Agregar Domicilio:
 	Método HTTP: POST
 	URL: /api/agregarDomicilio/:CI
-	Descripción: Este servicio permite agregar un domicilio a una persona específica. Debes 	proporcionar la cédula de identidad (CI) de la persona a la que se le asociará el domicilio en 	la URL y los datos del domicilio en el cuerpo de la solicitud.
+	Descripción: Este servicio permite agregar un domicilio a una persona específica. Se debe proporcionar la cédula de identidad (CI) de la persona a la que se le asociará el domicilio en la URL y los datos del domicilio en el cuerpo de la solicitud.
 	Respuesta exitosa: Devuelve un mensaje indicando que el domicilio se agregó con éxito.
 	Respuesta de error: Devuelve un mensaje de error si la persona no existe o si ocurre un error 	interno del servidor.
 
@@ -31,7 +32,7 @@ Obtener Domicilios por Criterio:
 	Respuesta exitosa: Devuelve una lista de domicilios que cumplen con los criterios 	especificados, incluyendo los detalles completos de la dirección y la información de la 	persona asociada.
 	Respuesta de error: Devuelve un mensaje de error si ocurre un error interno del servidor.
 
-3) Instalación: Hay que tener instalado Git y docker
+3) Instalación: Hay que tener instalado Git y NodeJs
 	Para clonar el repositorio
 	Crear una carpeta, posicionar la terminal ahí.
 	ejecutar: git clone https://github.com/DieAndres/tarea.git
@@ -53,7 +54,7 @@ Obtener Domicilios por Criterio:
  
 La elección del uso de Mongodb Atlas se debe a que ya teníamos experiencia con esa base de datos en conjunto con NodeJs.
                                                                
-Se definen tres esquemas de Mongose (librería de NodeJs): personaSchema, direccionSchema y domicilioSchema, que se deducen diréctamente de los requerimientos
+Se definen tres esquemas de Mongose (librería de NodeJs): personaSchema, direccionSchema y domicilioSchema, que se deducen diréctamente de los requerimientos.
 PersonaSchema define el esquema para la colección de personas. Esta colección tiene los siguiente campos:
 CI: número de cédula de identidad de la persona, que es único y obligatorio.
 Nombre: nombre de la persona.                                                                                                                                              
