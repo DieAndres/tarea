@@ -5,31 +5,31 @@ Tarea: API Rest
 2) URLs de la API. :
 
 Agregar Persona:
-	Método HTTP: POST
+	Método HTTP: POST.
 	URL: /api/agregarPersona
 	Descripción: Este servicio permite agregar una nueva persona a la base de datos. Debes 	enviar los datos de la persona en el cuerpo de la solicitud. Verifica si la persona ya existe en 	la base de datos antes de agregarla.
 	Respuesta exitosa: Devuelve un mensaje indicando que la persona se agregó con éxito.
 	Respuesta de error: Devuelve un mensaje de error si la persona ya existe o si ocurre un error interno del servidor.
 
 Agregar Domicilio:
-	Método HTTP: POST
-	URL: /api/agregarDomicilio/:CI
+	Método HTTP: POST.
+	URL: /api/agregarDomicilio/:CI.
 	Descripción: Este servicio permite agregar un domicilio a una persona específica. Se debe proporcionar la cédula de identidad (CI) de la persona a la que se le asociará el domicilio en la URL y los datos del domicilio en el cuerpo de la solicitud.
 	Respuesta exitosa: Devuelve un mensaje indicando que el domicilio se agregó con éxito.
 	Respuesta de error: Devuelve un mensaje de error si la persona no existe o si ocurre un error 	interno del servidor.
 
 Consultar Domicilio:
-	Método HTTP: GET
+	Método HTTP: GET.
 	URL: /api/consultarDomicilio/:CI
 	Descripción: Este servicio permite consultar los domicilios asociados a una persona 	específica. Debes proporcionar la cédula de identidad (CI) de la persona en la URL.
 	Respuesta exitosa: Devuelve una lista de los domicilios asociados a la persona, incluyendo 	los detalles completos de la dirección.
 	Respuesta de error: Devuelve un mensaje de error si la persona no existe o si ocurre un error 	interno del servidor.
 
 Obtener Domicilios por Criterio:
-	Método HTTP: GET
+	Método HTTP: GET.
 	URL: /api/obtenerDomiciliosPorCriterio
-	Descripción: Este servicio permite buscar domicilios que cumplan con ciertos criterios de 	búsqueda, como barrio, localidad y departamento. Los criterios de búsqueda se pasan como 	parámetros de consulta en la URL.
-	Respuesta exitosa: Devuelve una lista de domicilios que cumplen con los criterios 	especificados, incluyendo los detalles completos de la dirección y la información de la 	persona asociada.
+	Descripción: Este servicio permite buscar domicilios que cumplan con ciertos criterios de búsqueda, como barrio, localidad y departamento. Los criterios de búsqueda se pasan como 	parámetros de consulta en la URL.
+	Respuesta exitosa: Devuelve una lista de domicilios que cumplen con los criterios especificados, incluyendo los detalles completos de la dirección y la información de la 	persona asociada.
 	Respuesta de error: Devuelve un mensaje de error si ocurre un error interno del servidor.
 
 3) Instalación: Hay que tener instalado Git y NodeJs
