@@ -91,3 +91,15 @@ Como requerimientos opcionales optamos por dockerizar la aplicación y Jmeter pa
 	d) Para ejecutarlo: "docker start tareaCont"
 	e) Para detenerlo "docker stop tareaCont"            
 
+Prueba de carga con JMeter:
+Consiste en un plan de pruebas con 4 peticiones http, correpondiéndose con cada una de las URL de la API, hechas con 20 usuarios y que se repiten 10 veces.
+Las solicitudes son respondidas bien en su totalidad.
+El reporte sumario se detalla a continuacion.
+	Muestras 302 (Son 302 peticions http)
+ 	Promedio del tiempo de respuesta 673 milisegundos
+  	Tiempo máximo de respuesta 2019 milisegundos
+  	Desviación estandar 281
+   	Error %0
+	Kb/s enviados 5,21
+ 	Kb/s recibidos 73,50
+  	33,9 solicitudes por segundo
